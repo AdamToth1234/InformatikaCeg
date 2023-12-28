@@ -45,6 +45,7 @@ menu ul {
     font-family: "Cormorant";
     font-weight: bold;
     font-size: 1.7rem;
+    text-transform: uppercase;
     transition: 350ms ease-in-out;
 }
 
@@ -64,6 +65,11 @@ menu ul {
     position: absolute;
     right: 10px;
     top: 35px;
+    transition: 350ms ease-in-out;
+}
+
+.hamburger:hover {
+    transform: translateY(-5%);
 }
 
 .hamburger .hamburger-item {
@@ -91,17 +97,10 @@ menu ul {
 .login li:hover {
     cursor: pointer;
     transform: translateY(-5px);
+
 }
 
-main {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    min-height: 30vh;
-}
-
-.fooldal {
+main, .fooldal {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -111,16 +110,18 @@ main {
 
 iframe {
     aspect-ratio: 16 / 9;
-    width: 95%;
+    width: 70%;
     border: 2px solid white;
     border-radius: 10px;
 }
 
 .header {
-    font-size: 3rem;
+    font-size: 2.4rem;
     font-family: 'Libre Franklin';
     text-align: center;
     color: rgb(194, 194, 194);
+    text-transform: uppercase;
+    margin: 5rem;
 }
 
 .rolunk h2 {
@@ -131,10 +132,8 @@ iframe {
     margin: 5rem 0;
     color: rgb(194, 194, 194);
     width: 100%;
-}
+    text-transform: uppercase;
 
-.rolunk h2:hover {
-    background-color: w;
 }
 
 .rolunk img {
@@ -178,7 +177,6 @@ iframe {
         flex-direction: column;
         width: 100%;
         padding-left: 0;
-        transition: 350ms ease-in-out;
     }
 
     .menu li:not(:last-child){
