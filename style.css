@@ -138,16 +138,14 @@ iframe {
 }
 
 .rolunk img {
-    height: 500px;
     border-radius: 10px 50px;
 }
 
 .person1, .person2 {
     display: flex;
     align-items: center;
-    justify-content: space-between;
     width: 1000px;
-    font-size: 1.7rem;
+    justify-content: space-between;
     margin-bottom: 100px;
 }
 
@@ -155,6 +153,7 @@ iframe {
     margin: 3rem;
     text-align: justify;
     font-family: 'Georgia';
+    font-size: 1.6rem;
     background-color: rgb(220, 216, 216);
     padding: 15px;
     border-radius: 50px 10px;
@@ -220,5 +219,21 @@ iframe {
         position: absolute;
         left: 10px;
         top: 25px;
+    }
+}
+
+@media (max-width: 920px) {
+    .person1 img, .person2 img {
+        display: none;
+    }
+
+    .person1, .person2 {
+        justify-content: center;
+        width: 100%;
+        margin: 0;
+    }
+
+    .person1 p, .person2 p {
+        font-size: 1rem;
     }
 }
