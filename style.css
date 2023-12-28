@@ -100,7 +100,7 @@ menu ul {
 
 }
 
-main, .fooldal {
+main, .main-site {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -110,7 +110,7 @@ main, .fooldal {
 
 iframe {
     aspect-ratio: 16 / 9;
-    width: 70%;
+    width: 90%;
     border: 2px solid white;
     border-radius: 10px;
 }
@@ -121,10 +121,10 @@ iframe {
     text-align: center;
     color: rgb(194, 194, 194);
     text-transform: uppercase;
-    margin: 5rem;
+    margin-bottom: 5rem;
 }
 
-.rolunk h2 {
+.about-us h2 {
     font-family: 'Libre Franklin';
     font-size: 2.3rem;
     font-weight: bold;
@@ -136,7 +136,7 @@ iframe {
 
 }
 
-.rolunk img {
+.about-us img {
     border-radius: 10px 50px;
 }
 
@@ -220,7 +220,7 @@ iframe {
     }
 }
 
-@media (max-width: 920px) {
+@media (max-width: 1040px) {
     .person1 img, .person2 img {
         display: none;
     }
