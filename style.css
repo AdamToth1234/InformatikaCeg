@@ -282,12 +282,24 @@ iframe {
     }
 }
 
-@media (max-width: 501px) {
-    .strengths {
-        width: 380px;
+@media (max-width: 520px) {
+    .strengths-text li{
+        font-size: 1.5rem;
     }
 
+    .strengths {
+        width: 450px;
+    }
+}
+
+@media (max-width: 450px) {
     .strengths-text li{
-        font-size: 1.4rem;
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 430px) {
+    .strengths {
+        width: 370px;
     }
 }
