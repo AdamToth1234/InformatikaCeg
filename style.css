@@ -286,7 +286,9 @@ iframe {
     .strengths-text li{
         font-size: 1.5rem;
     }
+}
 
+@media (max-width: 500px) {
     .strengths {
         width: 450px;
     }
