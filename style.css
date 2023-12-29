@@ -91,6 +91,7 @@ menu ul {
 
 .login {
     margin-right: 40px;
+    margin-top: 33px;
     font-family: 'Cormorant';
     color: white;
     font-weight: bold;
@@ -193,15 +194,7 @@ iframe {
     color: rgb(89, 84, 84);
 }
 
-
-@media (max-width: 1290px) {
-    .menu li {
-        font-size: 1.3rem;
-    }
-
-}
-
-@media (max-width: 1135px) {
+@media (max-width: 1320px) {
     .menu {
         display: none;
     }
@@ -248,7 +241,7 @@ iframe {
         font-size: 1.2rem;
         position: absolute;
         left: 20px;
-        top: 25px;
+        top: 31px;
     }
 }
 
