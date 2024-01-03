@@ -280,6 +280,8 @@ footer ul li {
     transform: translateX(5px);
 }
 
+
+
 .main-login {
     display: flex;
     flex-direction: row;
@@ -310,7 +312,6 @@ footer ul li {
     padding: 10px;
     margin: 100px 0;
     color: rgb(207, 207, 207);
-    font-size: 1.5rem;
     background-color: white;
     box-shadow: 5px -5px 30px white;
 }
@@ -478,5 +479,9 @@ button:hover {
 
     .rating-fix {
         margin-top: 0;
+    }
+
+    input {
+        font-size: 1rem;
     }
 }
