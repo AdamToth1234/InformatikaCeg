@@ -318,7 +318,7 @@ footer ul li {
     color: rgb(207, 207, 207);
     background-color: white;
     box-shadow: 5px -5px 30px white;
-    width: 300px;
+    width: auto;
 }
 
 input {
