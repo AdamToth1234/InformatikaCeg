@@ -1,0 +1,26 @@
+.webshop {
+    border: 2px white solid;
+    display: flex;
+    justify-content: center;    
+    align-items: center;
+    margin-top: 50px;
+    font-size: 1.7rem;
+    color: rgb(140, 139, 139);
+}
+
+.products-list {
+    border-right: 2px white solid;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+    padding: 10px;
+}
+
+.products-list li {
+    padding: 8px;
+}
+
+.products-list li:not(:last-child) {
+    border-bottom: 2px white solid;
+}
