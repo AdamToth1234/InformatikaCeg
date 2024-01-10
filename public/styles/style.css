@@ -121,7 +121,6 @@ main, .main-site {
 }
 
 section {
-    opacity: 0;
     transition: ease-in-out 1.2s;
 }
 
@@ -214,6 +213,15 @@ iframe {
     color: rgb(89, 84, 84);
 }
 
+.references {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 3rem;
+    width: 88%;
+}
+
 .reference-text {
     display: grid;
     grid-template-columns: repeat(2, 450px);
@@ -221,9 +229,6 @@ iframe {
     margin-top: 100px;
 }
 
-.references {
-    margin-bottom: 3rem;
-}
 
 .references .reference {
     color: rgb(220, 216, 216);
@@ -342,6 +347,10 @@ footer ul li {
 }
 
 @media (max-width: 1040px) {
+    .about-us {
+        width: 90%;
+    }
+
     .person1 img, .person2 img {
         display: none;
     }
@@ -349,11 +358,11 @@ footer ul li {
     .person1, .person2 {
         justify-content: center;
         width: 100%;
-        margin: 0;
     }
 
     .person1 p, .person2 p {
         font-size: 1rem;
+        margin: 0;
     }
 
     .main-login {
