@@ -120,6 +120,11 @@ main, .main-site {
     min-height: 30vh;
 }
 
+section {
+    opacity: 0;
+    transition: ease-in-out 1.2s;
+}
+
 section:not(:last-child) {
     border-bottom: 2px white solid;
     padding-bottom: 10rem;
