@@ -5,19 +5,15 @@ hamburger.addEventListener("click", ()=>{
 })
 
 const main = [...document.querySelector("main").children]
-const products = [...document.querySelectorAll(".product")]
-console.log(products);
-
-
-let loading = 0
-
 main.forEach((item, i) => {
-    loading += 1
     setTimeout(() => {
         item.style.opacity = 1
-    }, i * 250 * loading)
+    }, i * 250)
 })
 
+
+const products = [...document.querySelectorAll(".product")]
+let loading = 0
 products.forEach((item, i) => {
     loading *= 0.7
     setTimeout(() => {
