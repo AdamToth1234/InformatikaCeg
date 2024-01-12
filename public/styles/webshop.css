@@ -3,10 +3,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 
-main {
+.content {
     display: flex;
     flex-direction: row;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 section {
@@ -41,7 +41,7 @@ img {
     display: block;
 }
 
-.webshop-nav:hover .fa-arrow-right {
+.webshop-nav:hover .fa-arrow-right-long {
     transform: rotate(-180deg);
 }
 
@@ -54,14 +54,14 @@ img {
     transition: ease-in-out 1.2s;
     list-style: none;
     border-radius: 10px;
-    height: 100vh;
+    height: auto;
     padding: 0;
     width: 100%;
-    margin-bottom: 0;
+    margin: 0;
 }
 
 .nav-item {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     width: 100%;
     transition: 250ms ease-in;
@@ -72,7 +72,8 @@ img {
 }
 
 .nav-item:not(:last-child) {
-    padding-bottom: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
 }
 
 .nav-item:first-child {
@@ -112,10 +113,10 @@ img {
 .fa {
     font-size: 2rem;
     color: white;
-    margin: 10px;
+    margin: 0px;
 }
 
-.fa-arrow-right {
+.fa-arrow-right-long {
     transform: rotate(0deg);
     transition: 700ms transform;
 }
@@ -130,14 +131,15 @@ img {
 
 .webshop-products {
     display: grid;
-    grid-template-columns: repeat(2, 450px);
+    grid-template-columns: repeat(3, 350px);
     justify-content: center;
+    height: 60%;
     width: 100%;
 }
 
 .webshop-products [class^="product"] {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     flex-direction: column;
     color: white;
@@ -176,6 +178,12 @@ img {
 
 
 @media (max-width: 1000px) {
+    .content {
+        flex-direction: column;
+        align-items: center;
+        width: 90%;
+    }
+    
     main {
         flex-direction: column;
     }
@@ -185,7 +193,8 @@ img {
     }
 
     .webshop-nav {
-        width: 90%;
+        width: 100%;
+        margin: 0;
     }
     
     .webshop-nav:hover {
@@ -208,6 +217,7 @@ img {
 
     .nav-item:not(:last-child), .nav-item:last-child {
         padding-bottom: 0;
+        margin-bottom: 0;
         height: 100%;
     }
 
@@ -218,5 +228,24 @@ img {
     .nav-link {
         justify-content: center;
         align-items: center;
+    }
+
+    .fa {
+        font-size: 1.3rem;
+        color: white;
+        margin: 10px;
+    }
+
+    .webshop-products {
+        grid-template-columns: repeat(1, 100%);
+        margin: 0;
+    }
+
+    .webshop-products [class^="product"] {
+        font-size: .5rem;
+    }
+
+    .price-cart p {
+        font-size: 1rem;
     }
 }
