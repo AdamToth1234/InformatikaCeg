@@ -9,6 +9,25 @@
     justify-content: space-between;
 }
 
+.hamburger-product {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    left: 40px;
+    top: 138px;
+    transition: 350ms ease-in-out;
+    cursor: pointer;
+    z-index: 1;
+}
+
+.hamburger-product .hamburger-item {
+    background: white;
+    height: 3px;
+    width: 2rem;
+    margin: 4px;
+    border-radius: 10px;
+}
+
 section {
     border: none;
 }
@@ -19,7 +38,11 @@ section:not(:last-child) {
 }
 
 img {
-    border-radius: 10px;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
 }
 
 .webshop-nav {
@@ -27,17 +50,16 @@ img {
     background-color: rgb(55, 53, 53);
     transition: width 400ms ease;
     width: 75px;
+    margin-bottom: 20px;
+    height: 100%;
+    border-radius: 15px;
 }
 
 .webshop-nav:hover {
     width: 20rem;
 }
 
-.webshop-nav:hover .link-item {
-    display: block;
-}
-
-.webshop-nav:hover .link-item-header {
+.webshop-nav:hover .link-item, .webshop-nav:hover .link-item-header {
     display: block;
 }
 
@@ -54,26 +76,24 @@ img {
     transition: ease-in-out 1.2s;
     list-style: none;
     border-radius: 10px;
-    height: auto;
-    padding: 0;
     width: 100%;
+    height: 80vh;
+    padding: 0;
     margin: 0;
 }
 
 .nav-item {
     display: flex;
     align-items: center;
+    justify-content: center;
+    height: 100%;
     width: 100%;
     transition: 250ms ease-in;
+    border-radius: 20px;
 }
 
 .nav-item:hover {
     background-color: rgb(102, 99, 99);
-}
-
-.nav-item:not(:last-child) {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
 }
 
 .nav-item:first-child {
@@ -98,12 +118,8 @@ img {
     height: 100%;
 }
 
-.nav-link:last-child {
-    margin-bottom: 10px;
-}
-
 .nav-link-header {
-    font-size: 3rem;
+    font-size: 3.5rem;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
@@ -113,7 +129,7 @@ img {
 .fa {
     font-size: 2rem;
     color: white;
-    margin: 0px;
+    margin: 10px;
 }
 
 .fa-arrow-right-long {
@@ -135,6 +151,7 @@ img {
     justify-content: center;
     height: 60%;
     width: 100%;
+    margin-bottom: 20px;
 }
 
 .webshop-products [class^="product"] {
@@ -144,7 +161,7 @@ img {
     flex-direction: column;
     color: white;
     border: 1px solid rgb(208, 204, 204);
-    padding: 10px 50px;
+    padding: 10px 20px;
     font-family: 'Montserrat';
     font-size: .7rem;
     cursor: pointer;
@@ -156,6 +173,7 @@ img {
     background-color: rgb(104, 100, 100);
 }
 
+
 .price-cart {
     display: flex;
     justify-content: space-between;
@@ -164,7 +182,7 @@ img {
     margin-top: 50px;
 }
 
-.price-cart p {
+.price-cart .price {
     font-size: 1.5rem;
 }
 
@@ -177,11 +195,11 @@ img {
 }
 
 
-@media (max-width: 1000px) {
+@media (max-width: 1145px) {
     .content {
         flex-direction: column;
         align-items: center;
-        width: 90%;
+        width: 95%;
     }
     
     main {
@@ -192,60 +210,73 @@ img {
         margin: 20px;
     }
 
+    .hamburger-product {
+        display: flex;
+    }
+
     .webshop-nav {
+        display: none;
+    }
+
+    .webshop-nav.active {
+        display: flex;
         width: 100%;
+        position: absolute;
+        z-index: 3;
+        width: 100%;
+        height: 100vh;
+        background-color: rgb(55, 53, 53);
         margin: 0;
-    }
-    
-    .webshop-nav:hover {
-        width: 90%;
-    }
-    
-    .webshop-nav:hover .link-item {
-        display: none;
-    }
-    
-    .webshop-nav:hover .link-item-header {
-        display: none;
+        padding: 0;
     }
 
-    .webshop-nav .webshop-nav-ul {
-        flex-direction: row;
-        height: 100px;
-        margin-top: 0;
-    }
-
-    .nav-item:not(:last-child), .nav-item:last-child {
-        padding-bottom: 0;
-        margin-bottom: 0;
-        height: 100%;
-    }
-
-    .nav-item-header {
-        display: none;
-    }
-
-    .nav-link {
-        justify-content: center;
-        align-items: center;
+    .webshop-nav.active .webshop-nav-ul {
+        flex-direction: column;
+        height: 100vh;
+        padding: 10px;
     }
 
     .fa {
-        font-size: 1.3rem;
+        font-size: 1.6rem;
         color: white;
         margin: 10px;
     }
 
+    .link-item-header, .link-item {
+        display: block;
+    }
+
     .webshop-products {
-        grid-template-columns: repeat(1, 100%);
-        margin: 0;
+        grid-template-columns: repeat(2, 50%);
+        margin: 0 0 20px 0;
     }
 
     .webshop-products [class^="product"] {
-        font-size: .5rem;
+        font-size: .7rem;
     }
 
-    .price-cart p {
-        font-size: 1rem;
+    .price-cart .price {
+        font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 540px) {
+    .fa {
+        font-size: 1.3rem;
+    }
+
+    .nav-link {
+        padding: 0;
+    }
+
+    .webshop-products {
+        grid-template-columns: repeat(1, 100%);
+        margin: 0 0 20px 0;
+    }
+}
+
+@media (max-width: 470px) {
+    .hamburger-product {
+        top: 125px;
     }
 }

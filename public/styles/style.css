@@ -48,7 +48,6 @@ a {
     display: flex;
     list-style: none;
     align-items: start;
-    transition: 350ms ease-in;
 }
 
 .menu li {
@@ -307,7 +306,6 @@ footer ul li {
         flex-direction: column;
         width: 100%;
         padding-left: 0;
-        transition: 350ms ease-in;
     }
 
     .menu li {
