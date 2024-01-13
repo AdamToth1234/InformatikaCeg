@@ -21,11 +21,10 @@ const productsShuffle = document.querySelector(".webshop-products")
 const productsShuffleArray = [...productsShuffle.children]
 const content = document.querySelector(".content")
 
-let productsShuffleArrayFinal = []
-for (let i = 0; i < 9; i++) {
-    let number = Math.floor(Math.random() * productsShuffleArray.length)
-    productsShuffleArrayFinal.push(productsShuffleArray[number])
-    productsShuffleArray.splice(number, 1)
+
+for (let i = productsShuffleArray.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [productsShuffleArray[i], productsShuffleArray[j]] = [productsShuffleArray[j], productsShuffleArray[i]];
 }
 
 
@@ -35,7 +34,7 @@ while (productsShuffle.firstChild) {
 }
 
 
-for (let i of productsShuffleArrayFinal) {
+for (let i of productsShuffleArray) {
     productsShuffle.appendChild(i)
 }
 

@@ -12,12 +12,11 @@
 .hamburger-product {
     display: none;
     flex-direction: column;
-    position: absolute;
+    /* position: absolute; */
     left: 40px;
     top: 138px;
     transition: 350ms ease-in-out;
     cursor: pointer;
-    z-index: 1;
 }
 
 .hamburger-product .hamburger-item {
@@ -92,6 +91,10 @@ img {
     border-radius: 20px;
 }
 
+.nav-item.active-site {
+    background-color: rgb(93, 74, 74);
+}
+
 .nav-item:hover {
     background-color: rgb(102, 99, 99);
 }
@@ -119,7 +122,7 @@ img {
 }
 
 .nav-link-header {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     font-weight: bold;
     display: flex;
     justify-content: space-between;
@@ -174,6 +177,7 @@ img {
 }
 
 
+
 .price-cart {
     display: flex;
     justify-content: space-between;
@@ -201,17 +205,17 @@ img {
         align-items: center;
         width: 95%;
     }
-    
+
+    .hamburger-product {
+        display: flex;
+    }
+
     main {
         flex-direction: column;
     }
 
     section {
         margin: 20px;
-    }
-
-    .hamburger-product {
-        display: flex;
     }
 
     .webshop-nav {
@@ -235,7 +239,7 @@ img {
         height: 100vh;
         padding: 10px;
     }
-
+    
     .fa {
         font-size: 1.6rem;
         color: white;
@@ -261,12 +265,12 @@ img {
 }
 
 @media (max-width: 540px) {
-    .fa {
-        font-size: 1.3rem;
-    }
-
     .nav-link {
         padding: 0;
+    }
+
+    .fa {
+        font-size: 1.3rem;
     }
 
     .webshop-products {
