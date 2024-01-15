@@ -1,7 +1,3 @@
-if (process.env.NODE_ENV !== "production") {
-    require("dotenv").config()
-}
-
 
 
 const express = require("express")
@@ -33,7 +29,7 @@ app.use(express.static(path.join(initialPath)));
 app.use(express.urlencoded({ extended: false }))
 app.use(flash())
 app.use(session({
-    secret: process.env.SESSION_SECRET,
+    secret: "Kaka",
     resave: false,
     saveUninitialized: false
 }))
