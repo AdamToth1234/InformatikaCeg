@@ -1,5 +1,3 @@
-
-
 const express = require("express")
 const path = require("path")
 const bodyParser = require("body-parser")
@@ -121,7 +119,6 @@ app.get("/case", (req, res) => {
 
 function checkAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
-        // req.body.kaka.style.display = "block"
         return next()
     }
 
@@ -130,7 +127,6 @@ function checkAuthenticated(req, res, next) {
 
 function checkNotAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
-        req.body.kaka.style.display = "none"
         return res.redirect("/")
     }
     next()
