@@ -1,6 +1,8 @@
 if (process.env.NODE_ENV !== "production") {
-  require("dotenv").config()
+    require("dotenv").config()
 }
+
+
 
 const express = require("express")
 const path = require("path")
@@ -9,16 +11,20 @@ const bcrypt = require("bcrypt")
 const passport = require("passport")
 const flash = require("express-flash")
 const session = require("express-session")
+const collection = require("./config")
+const methodOverride = require("method-override")
+
 const app = express()
 
+app.set("view engine", "ejs")
+
+
 const initializePassport = require("./passport-config")
-initializePassport(
-  passport,
-  email => users.find(user => user.email === email),
-  id => users.find(user => user.id === id)
+initializePassport(passport,
+    email => User.findOne({ email: email }),
+    id => User.findById(id)
 )
 
-const users = []
 
 let initialPath = path.join(__dirname, "public")
 
@@ -27,97 +33,111 @@ app.use(express.static(path.join(initialPath)));
 app.use(express.urlencoded({ extended: false }))
 app.use(flash())
 app.use(session({
-  secret: process.env.SESSION_SECRET,
-  resave: false,
-  saveUninitialized: false
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false
 }))
-
 app.use(passport.initialize())
 app.use(passport.session())
+app.use(methodOverride("_method"))
 
 
 app.get("/", checkAuthenticated, (req, res) => {
-  res.sendFile(path.join(initialPath, "/html/index.html"))
+    res.render("index")
 })
 
 app.get("/login", checkNotAuthenticated, (req, res) => {
-  res.sendFile(path.join(initialPath, "/html/login.html"))
+    res.render("login")
 })
 
 app.post("/login", checkNotAuthenticated, passport.authenticate("local", {
-  successRedirect: "/webshop",
-  failureRedirect: "login",
-  failureMessage: true
+    successRedirect: "/",
+    failureRedirect: "/login",
+    failureMessage: true
 }))
 
 app.get("/register", checkNotAuthenticated, (req, res) => {
-  res.sendFile(path.join(initialPath, "/html/register.html"))
+    res.render("register")
 })
 
 app.post("/register", checkNotAuthenticated, async (req, res) => {
-  try {
-      const hashedPassword = await bcrypt.hash(req.body.password, 10)
-      users.push({
-          id: Date.now().toString(),
-          name: req.body.name,
-          email: req.body.email,
-          password: hashedPassword
-      })
-      res.redirect("/login")
-  } catch {
-      res.redirect("/register")
-  }
+    const data = {
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password
+    }
+
+    const existingUser = await collection.findOne({ email: data.email })
+
+    if (existingUser) {
+        res.send("Létezik ez az email cím! Használjon másikat!")
+    } else {
+        const hashedPassword = await bcrypt.hash(data.password, 10)
+
+        data.password = hashedPassword
+
+        const userdata = await collection.insertMany(data)
+        res.redirect("/login")
+    }
+})
+
+app.delete("/logout", checkAuthenticated, (req, res) => {
+    req.logOut()
+    res.redirect("/login")
 })
 
 app.get("/webshop", (req, res) => {
-  res.sendFile(path.join(initialPath, "/html/webshop.html"))
+    res.render("webshop")
 })
 
 app.get("/motherboard", (req, res) => {
-  res.sendFile(path.join(initialPath, "/html/motherboard.html"))
+    res.render("motherboard")
 })
 
 app.get("/cpu", (req, res) => {
-  res.sendFile(path.join(initialPath, "/html/cpu.html"))
+    res.render("cpu")
 })
 
 app.get("/gpu", (req, res) => {
-  res.sendFile(path.join(initialPath, "/html/gpu.html"))
+    res.render("gpu")
 })
 
 app.get("/ram", (req, res) => {
-  res.sendFile(path.join(initialPath, "/html/ram.html"))
+    res.render("ram")
 })
 
 app.get("/ssd", (req, res) => {
-  res.sendFile(path.join(initialPath, "/html/ssd.html"))
+    res.render("ssd")
 })
 
 app.get("/hdd", (req, res) => {
-  res.sendFile(path.join(initialPath, "/html/hdd.html"))
+    res.render("hdd")
 })
 
 app.get("/power", (req, res) => {
-  res.sendFile(path.join(initialPath, "/html/power.html"))
+    res.render("power")
 })
 
 app.get("/case", (req, res) => {
-  res.sendFile(path.join(initialPath, "/html/case.html"))
+    res.render("case")
 })
 
-function checkAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-      return next()
-  }
 
-  res.redirect("/login")
+function checkAuthenticated(req, res, next) {
+    if (req.isAuthenticated()) {
+        // req.body.kaka.style.display = "block"
+        return next()
+    }
+
+    res.redirect("/login")
 }
 
 function checkNotAuthenticated(req, res, next) {
-  if (req.isAuthenticated()) {
-      return res.redirect("/")
-  }
-  next()
+    if (req.isAuthenticated()) {
+        req.body.kaka.style.display = "none"
+        return res.redirect("/")
+    }
+    next()
 }
 
-app.listen(3000)
+app.listen(process.env.PORT || 3000)
