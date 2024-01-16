@@ -5,9 +5,12 @@ const bcrypt = require("bcrypt")
 const passport = require("passport")
 const flash = require("express-flash")
 const session = require("express-session")
-const collection = require("./config")
 const methodOverride = require("method-override")
+const mongoose = require("mongoose")
 const routes = require("./routes/route")
+const collectionCart = require("./models/cart_config")
+const collectionCartGet = require("./models/cart_config_get")
+const collectionUser = require("./models/config")
 
 
 const app = express()
@@ -16,6 +19,7 @@ app.set("view engine", "ejs")
 
 
 const initializePassport = require("./passport-config")
+const userCartGet = require("./models/cart_config_get")
 initializePassport(passport,
     email => User.findOne({ email: email }),
     id => User.findById(id)
@@ -53,7 +57,7 @@ app.post("/register", checkNotAuthenticated, async (req, res) => {
         password: req.body.password
     }
 
-    const existingUser = await collection.findOne({ email: data.email })
+    const existingUser = await collectionUser.findOne({ email: data.email })
 
     if (existingUser) {
         res.render("register", { message: "Létezik ez az email cím! Használjon másikat!" })
@@ -62,9 +66,18 @@ app.post("/register", checkNotAuthenticated, async (req, res) => {
 
         data.password = hashedPassword
 
-        const userdata = await collection.insertMany(data)
+        await collectionUser.insertMany(data)
         res.redirect("/login")
     }
+})
+
+app.post("/cart", checkAuthenticated, async (req, res) => {
+    collectionCart(req.user.email, req.body.name, req.body.kaka, 2, 1)
+})
+
+app.get("/cart", checkAuthenticated, async (req, res) => {
+    res.status(200).json({message: await userCartGet(req.user.email)})
+
 })
 
 app.delete("/logout", checkAuthenticated, (req, res) => {
@@ -75,10 +88,6 @@ app.delete("/logout", checkAuthenticated, (req, res) => {
         res.redirect("/login");
     });
 });
-
-app.post("/cart", checkAuthenticated, (req, res) => {
-    console.log(req.body);
-})
 
 
 

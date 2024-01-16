@@ -202,7 +202,7 @@ img {
 }
 
 .cart {
-    background-color: hsl(248, 52%, 8%);
+    background-color: transparent;
     border: 0;
     cursor: pointer;
     transition: 500ms ease-in-out;

@@ -14,9 +14,9 @@ router.get("/login", checkNotAuthenticated, (req, res) => {
     res.render("login")
 })
 
-router.get("/cart", checkNotAuthenticated, (req, res) => {
-    res.render("cart")
-})
+// router.get("/cart", checkNotAuthenticated, (req, res) => {
+//     res.render("cart")
+// })
 
 router.get("/webshop", checkNotAuthenticated, (req, res) => {
     res.render("webshop")
@@ -60,9 +60,9 @@ router.get("/index-login", checkAuthenticated, (req, res) => {
     res.render("index-login", { name: req.user.name})
 })
 
-router.get("/cart-login", checkAuthenticated, (req, res) => {
-    res.render("cart-login")
-})
+// router.get("/cart-login", checkAuthenticated, (req, res) => {
+//     res.render("cart-login")
+// })
 
 router.get("/webshop-login", checkAuthenticated, (req, res) => {
     res.render("webshop-login")

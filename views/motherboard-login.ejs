@@ -11,6 +11,7 @@
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <script src="/js/script.js" defer></script>
     <script src="/js/products.js" defer></script>
+    <script src="/js/cart.js" defer></script>
     <script src="https://kit.fontawesome.com/f5d27edf17.js" crossorigin="anonymous"></script>
 </head>
 
@@ -108,21 +109,22 @@
             <section class="webshop-products">
                 <div class="product product1">
                     <img src="/img/products/motherboard/motherboard1.png" alt="Motherboard1">
-                    <form action="/cart" method="POST" class="form-cart" name="cart">
-                        <input type="text" name="kaka" id="kaka">
-                        <h1>Gigabyte B550 Gaming X V2</h1>
-                        <div class="price-cart">
-                            <p class="price">45,000 Ft</p>
-                            <button type="submit" class="cart"><i class="fa fa-shopping-cart"></i></button>
-                        </div>
-                    </form>
+                    <h1>Gigabyte B550 Gaming X V2</h1>
+                    <div class="price-cart">
+                        <p class="price">45,000 Ft</p>
+                        <button class="cart" data-product-id="2" data-quantity="10">
+                            <i class="fa fa-shopping-cart"></i>
+                        </button>
+                    </div>
                 </div>
                 <div class="product product2">
                     <img src="/img/products/motherboard/motherboard2.png" alt="Motherboard2">
                     <h1>Asus ROG Strix B550-F</h1>
                     <div class="price-cart">
                         <p class="price">65,700 Ft</p>
-                        <a href="index.html"><i class="fa fa-shopping-cart"></i></a>
+                        <button class="" id="kaka">
+                            <i class="fa fa-shopping-cart"></i>
+                        </button>
                     </div>
                 </div>
                 <div class="product product3">

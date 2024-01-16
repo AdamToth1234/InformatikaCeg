@@ -102,7 +102,6 @@ a {
     font-weight: bold;
     font-size: 1.7rem;
     display: flex;
-    flex-direction: row;
 }
 
 .login-button li {
@@ -123,7 +122,7 @@ a {
 }
 
 .log-out {
-    background-color: hsl(248, 52%, 8%);
+    background-color: transparent;
     border: 0;
     cursor: pointer;
     transition: 500ms ease-in-out;
@@ -317,7 +316,7 @@ footer ul li {
 }
 
 
-@media (max-width: 1490px) {
+@media (max-width: 1360px) {
     .menu {
         display: none;
     }
@@ -364,6 +363,7 @@ footer ul li {
         font-size: 1.2rem;
         position: absolute;
         left: 20px;
+        top: 31px;
     }
 }
 
