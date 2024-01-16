@@ -9,14 +9,12 @@ async function initialize(passport) {
             const user = await User.findOne({ email: email })
 
             if (!user) {
-                console.log("Nincs ilyen felhasználó ezzel az email címmel!")
                 return done(null, false, { message: "Nincs ilyen felhasználó ezzel az email címmel!" })
             }
 
             if (await bcrypt.compare(password, user.password)) {
                 return done(null, user)
             } else {
-                console.log("Helytelen jelszó!");
                 return done(null, false, { message: "Helytelen jelszó!" })
             }
         } catch (err) {

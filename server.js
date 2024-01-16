@@ -7,6 +7,8 @@ const flash = require("express-flash")
 const session = require("express-session")
 const collection = require("./config")
 const methodOverride = require("method-override")
+const routes = require("./routes/route")
+
 
 const app = express()
 
@@ -23,6 +25,7 @@ initializePassport(passport,
 let initialPath = path.join(__dirname, "public")
 
 app.use(bodyParser.json())
+app.use(express.json())
 app.use(express.static(path.join(initialPath)));
 app.use(express.urlencoded({ extended: false }))
 app.use(flash())
@@ -34,25 +37,14 @@ app.use(session({
 app.use(passport.initialize())
 app.use(passport.session())
 app.use(methodOverride("_method"))
+app.use("/", routes)
 
-
-app.get("/", checkAuthenticated, (req, res) => {
-    res.render("index")
-})
-
-app.get("/login", checkNotAuthenticated, (req, res) => {
-    res.render("login")
-})
 
 app.post("/login", checkNotAuthenticated, passport.authenticate("local", {
-    successRedirect: "/",
+    successRedirect: "/index-login",
     failureRedirect: "/login",
-    failureMessage: true
+    failureFlash: true
 }))
-
-app.get("/register", checkNotAuthenticated, (req, res) => {
-    res.render("register")
-})
 
 app.post("/register", checkNotAuthenticated, async (req, res) => {
     const data = {
@@ -64,7 +56,7 @@ app.post("/register", checkNotAuthenticated, async (req, res) => {
     const existingUser = await collection.findOne({ email: data.email })
 
     if (existingUser) {
-        res.send("Létezik ez az email cím! Használjon másikat!")
+        res.render("register", { message: "Létezik ez az email cím! Használjon másikat!" })
     } else {
         const hashedPassword = await bcrypt.hash(data.password, 10)
 
@@ -84,42 +76,10 @@ app.delete("/logout", checkAuthenticated, (req, res) => {
     });
 });
 
-
-app.get("/webshop", (req, res) => {
-    res.render("webshop")
+app.post("/cart", checkAuthenticated, (req, res) => {
+    console.log(req.body);
 })
 
-app.get("/motherboard", (req, res) => {
-    res.render("motherboard")
-})
-
-app.get("/cpu", (req, res) => {
-    res.render("cpu")
-})
-
-app.get("/gpu", (req, res) => {
-    res.render("gpu")
-})
-
-app.get("/ram", (req, res) => {
-    res.render("ram")
-})
-
-app.get("/ssd", (req, res) => {
-    res.render("ssd")
-})
-
-app.get("/hdd", (req, res) => {
-    res.render("hdd")
-})
-
-app.get("/power", (req, res) => {
-    res.render("power")
-})
-
-app.get("/case", (req, res) => {
-    res.render("case")
-})
 
 
 function checkAuthenticated(req, res, next) {
@@ -132,7 +92,7 @@ function checkAuthenticated(req, res, next) {
 
 function checkNotAuthenticated(req, res, next) {
     if (req.isAuthenticated()) {
-        return res.redirect("/")
+        return res.redirect("/index-login")
     }
     next()
 }

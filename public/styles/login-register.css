@@ -53,6 +53,17 @@ input {
     text-decoration: underline;
 }
 
+.error {
+    border: 1px red solid;
+    border-radius: 10px;
+    background-color: red;
+    padding: 10px;
+    font-size: 20px;
+    color: black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    display: none;
+}
+
 button {
     width: 100%;
     font-size: 1.5rem;

@@ -24,15 +24,17 @@
                 <span class="hamburger-item"></span>
             </div>
             <ul class="menu">
-                <li><a href="/">Főoldal</a></li>
-                <li><a href="/#strengths">Erősségek</a></li>
-                <li><a href="/#about-us">Bemutatkozás</a></li>
-                <li><a href="/#references">Referenciák</a></li>
-                <li><a href="/webshop">Webshop</a></li>
+                <li><a href="/index-login">Főoldal</a></li>
+                <li><a href="/index-login#strengths">Erősségek</a></li>
+                <li><a href="/index-login#about-us">Bemutatkozás</a></li>
+                <li><a href="/index-login#references">Referenciák</a></li>
+                <li><a href="/webshop-login">Webshop</a></li>
             </ul>
             <ul class="login-button">
                 <li>
-                    <a href="/login"><i class="fa fa-sign-in" style="font-size:40px;color:white;margin:0;"></i></a>
+                    <form action="/logout?_method=DELETE" method="POST">
+                        <button type="submit" class="log-out"><i class="fa fa-arrow-right-from-bracket" style="font-size:40px;color:white;margin:0;"></i></button>
+                    </form>
                 </li>
             </ul>
         </nav>
@@ -48,55 +50,55 @@
             <section class="webshop-nav">
                 <ul class="webshop-nav-ul">
                     <li class="nav-item nav-item-header">
-                        <a href="/" class="nav-link nav-link-header">
+                        <a href="/index-login" class="nav-link nav-link-header">
                             <span class="link-item-header">PCY</span>
                             <i class="fa fa-arrow-right-long" aria-hidden="true"></i>
                         </a>
                     </li>
                     <li class="nav-item active-site">
-                        <a href="/motherboard" class="nav-link">
+                        <a href="/motherboard-login" class="nav-link">
                             <i class="fa fa-robot" aria-hidden="true"></i>
                             <span class="link-item">Alaplap</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/cpu" class="nav-link">
+                        <a href="/cpu-login" class="nav-link">
                             <i class="fa fa-microchip" aria-hidden="true"></i>
                             <span class="link-item">CPU + hűtő</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/gpu" class="nav-link">
+                        <a href="/gpu-login" class="nav-link">
                             <i class="fa fa-display" aria-hidden="true"></i>
                             <span class="link-item">Videókártya</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                       <a href="/ram" class="nav-link">
+                       <a href="/ram-login" class="nav-link">
                             <i class="fa fa-memory" aria-hidden="true"></i>
                             <span class="link-item">Memória</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/ssd" class="nav-link">
+                        <a href="/ssd-login" class="nav-link">
                             <i class="fa fa-floppy-disk" aria-hidden="true"></i>
                             <span class="link-item">SSD meghajtó</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/hdd" class="nav-link">
+                        <a href="/hdd-login" class="nav-link">
                             <i class="fa fa-hdd" aria-hidden="true"></i>
                             <span class="link-item">Merevlemez</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/power" class="nav-link">
+                        <a href="/power-login" class="nav-link">
                             <i class="fa fa-plug" aria-hidden="true"></i>
                             <span class="link-item">Tápegység</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/case" class="nav-link">
+                        <a href="/case-login" class="nav-link">
                             <i class="fa fa-server" aria-hidden="true"></i>
                             <span class="link-item">Számítógépház</span>
                         </a>
@@ -106,11 +108,14 @@
             <section class="webshop-products">
                 <div class="product product1">
                     <img src="/img/products/motherboard/motherboard1.png" alt="Motherboard1">
-                    <h1>Gigabyte B550 Gaming X V2</h1>
-                    <div class="price-cart">
-                        <p class="price">45,000 Ft</p>
-                        <button type="submit" class="cart"><i class="fa fa-shopping-cart"></i></button>
-                    </div>
+                    <form action="/cart" method="POST" class="form-cart" name="cart">
+                        <input type="text" name="kaka" id="kaka">
+                        <h1>Gigabyte B550 Gaming X V2</h1>
+                        <div class="price-cart">
+                            <p class="price">45,000 Ft</p>
+                            <button type="submit" class="cart"><i class="fa fa-shopping-cart"></i></button>
+                        </div>
+                    </form>
                 </div>
                 <div class="product product2">
                     <img src="/img/products/motherboard/motherboard2.png" alt="Motherboard2">

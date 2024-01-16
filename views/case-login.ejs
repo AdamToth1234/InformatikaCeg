@@ -24,21 +24,23 @@
                 <span class="hamburger-item"></span>
             </div>
             <ul class="menu">
-                <li><a href="/">Főoldal</a></li>
-                <li><a href="/#strengths">Erősségek</a></li>
-                <li><a href="/#about-us">Bemutatkozás</a></li>
-                <li><a href="/#references">Referenciák</a></li>
-                <li><a href="/webshop">Webshop</a></li>
+                <li><a href="/index-login">Főoldal</a></li>
+                <li><a href="/index-login#strengths">Erősségek</a></li>
+                <li><a href="/index-login#about-us">Bemutatkozás</a></li>
+                <li><a href="/index-login#references">Referenciák</a></li>
+                <li><a href="/webshop-login">Webshop</a></li>
             </ul>
             <ul class="login-button">
                 <li>
-                    <a href="/login"><i class="fa fa-sign-in" style="font-size:40px;color:white;margin:0;"></i></a>
+                    <form action="/logout?_method=DELETE" method="POST">
+                        <button type="submit" class="log-out"><i class="fa fa-arrow-right-from-bracket" style="font-size:40px;color:white;margin:0;"></i></button>
+                    </form>
                 </li>
             </ul>
         </nav>
     </header>
     <main>
-        <h1 class="header">Alaplap</h1>
+        <h1 class="header">Számítógépház</h1>
         <div class="content">
             <div class="hamburger-product">
                 <span class="hamburger-item"></span>
@@ -48,55 +50,55 @@
             <section class="webshop-nav">
                 <ul class="webshop-nav-ul">
                     <li class="nav-item nav-item-header">
-                        <a href="/" class="nav-link nav-link-header">
+                        <a href="/index-login" class="nav-link nav-link-header">
                             <span class="link-item-header">PCY</span>
                             <i class="fa fa-arrow-right-long" aria-hidden="true"></i>
                         </a>
                     </li>
-                    <li class="nav-item active-site">
-                        <a href="/motherboard" class="nav-link">
+                    <li class="nav-item">
+                        <a href="/motherboard-login" class="nav-link">
                             <i class="fa fa-robot" aria-hidden="true"></i>
                             <span class="link-item">Alaplap</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/cpu" class="nav-link">
+                        <a href="/cpu-login" class="nav-link">
                             <i class="fa fa-microchip" aria-hidden="true"></i>
                             <span class="link-item">CPU + hűtő</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/gpu" class="nav-link">
+                        <a href="/gpu-login" class="nav-link">
                             <i class="fa fa-display" aria-hidden="true"></i>
                             <span class="link-item">Videókártya</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                       <a href="/ram" class="nav-link">
+                       <a href="/ram-login" class="nav-link">
                             <i class="fa fa-memory" aria-hidden="true"></i>
                             <span class="link-item">Memória</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/ssd" class="nav-link">
+                        <a href="/ssd-login" class="nav-link">
                             <i class="fa fa-floppy-disk" aria-hidden="true"></i>
                             <span class="link-item">SSD meghajtó</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/hdd" class="nav-link">
+                        <a href="/hdd-login" class="nav-link">
                             <i class="fa fa-hdd" aria-hidden="true"></i>
                             <span class="link-item">Merevlemez</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="/power" class="nav-link">
+                        <a href="/power-login" class="nav-link">
                             <i class="fa fa-plug" aria-hidden="true"></i>
                             <span class="link-item">Tápegység</span>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="/case" class="nav-link">
+                    <li class="nav-item active-site">
+                        <a href="/case-login" class="nav-link">
                             <i class="fa fa-server" aria-hidden="true"></i>
                             <span class="link-item">Számítógépház</span>
                         </a>
@@ -105,74 +107,74 @@
             </section>
             <section class="webshop-products">
                 <div class="product product1">
-                    <img src="/img/products/motherboard/motherboard1.png" alt="Motherboard1">
-                    <h1>Gigabyte B550 Gaming X V2</h1>
+                    <img src="/img/products/case/case1.png" alt="Case1">
+                    <h1>NZXT H6 Flow RGB | CC-H61FB-R1</h1>
                     <div class="price-cart">
-                        <p class="price">45,000 Ft</p>
-                        <button type="submit" class="cart"><i class="fa fa-shopping-cart"></i></button>
+                        <p class="price">46,740 Ft</p>
+                        <a href="index.html"><i class="fa fa-shopping-cart"></i></a>
                     </div>
                 </div>
                 <div class="product product2">
-                    <img src="/img/products/motherboard/motherboard2.png" alt="Motherboard2">
-                    <h1>Asus ROG Strix B550-F</h1>
+                    <img src="/img/products/case/case2.png" alt="Case2">
+                    <h1>NZXT H6 Flow | CC-H61FB-01 | Compact Dual-Chamber Mid-Tower Airflow Case</h1>
                     <div class="price-cart">
-                        <p class="price">65,700 Ft</p>
+                        <p class="price">38,085 Ft</p>
                         <a href="index.html"><i class="fa fa-shopping-cart"></i></a>
                     </div>
                 </div>
                 <div class="product product3">
-                    <img src="/img/products/motherboard/motherboard3.png" alt="Motherboard3">
-                    <h1>ASUS PRIME B760M</h1>
+                    <img src="/img/products/case/case3.png" alt="Case3">
+                    <h1>GAMDIAS ATX Mid Tower Gaming Computer PC Case </h1>
                     <div class="price-cart">
-                        <p class="price">43,200 Ft</p>
+                        <p class="price">20,310 Ft</p>
                         <a href="index.html"><i class="fa fa-shopping-cart"></i></a>
                     </div>
                 </div>
                 <div class="product product4">
-                    <img src="/img/products/motherboard/motherboard4.png" alt="Motherboard4">
-                    <h1>Gigabyte B550 AORUS ELITE AX V2</h1>
+                    <img src="/img/products/case/case4.png" alt="Case4">
+                    <h1>Antec NX200 M, Micro-ATX Tower, Mini-Tower Computer Case</h1>
                     <div class="price-cart">
-                        <p class="price">55,340 Ft</p>
+                        <p class="price">24,230 Ft</p>
                         <a href="index.html"><i class="fa fa-shopping-cart"></i></a>
                     </div>
                 </div>
                 <div class="product product5">
-                    <img src="/img/products/motherboard/motherboard5.png" alt="Motherboard5">
-                    <h1>MSI B550-A PRO ProSeries</h1>
+                    <img src="/img/products/case/case5.png" alt="Case5">
+                    <h1>MUSETEX ATX PC Case,5 PWM ARGB Fans Pre-Installed</h1>
                     <div class="price-cart">
-                        <p class="price">41,500 Ft</p>
+                        <p class="price">38,085 Ft</p>
                         <a href="index.html"><i class="fa fa-shopping-cart"></i></a>
                     </div>
                 </div>
                 <div class="product product6">
-                    <img src="/img/products/motherboard/motherboard6.png" alt="Motherboard6">
-                    <h1>MSI MAG B550 TOMAHAWKH</h1>
+                    <img src="/img/products/case/case6.png" alt="Case6">
+                    <h1>ASUS TUF Gaming GT501 Mid-Tower Computer Case</h1>
                     <div class="price-cart">
-                        <p class="price">55,350 Ft</p>
+                        <p class="price">54,450 Ft</p>
                         <a href="index.html"><i class="fa fa-shopping-cart"></i></a>
                     </div>
                 </div>
                 <div class="product product7">
-                    <img src="/img/products/motherboard/motherboard7.png" alt="Motherboard7">
-                    <h1>ASUS ROG Strix Z790</h1>
+                    <img src="/img/products/case/case7.png" alt="Case7">
+                    <h1>MUSETEX ATX PC Case, 6 PWM ARGB Fans Pre-Installed</h1>
                     <div class="price-cart">
-                        <p class="price">124,540 Ft</p>
+                        <p class="price">41,550 Ft</p>
                         <a href="index.html"><i class="fa fa-shopping-cart"></i></a>
                     </div>
                 </div>
                 <div class="product product8">
-                    <img src="/img/products/motherboard/motherboard8.png" alt="Motherboard8">
-                    <h1>ASUS TUF Gaming Z590-Plus</h1>
+                    <img src="/img/products/case/case8.png" alt="Case8">
+                    <h1>MSI Premium Mid-Tower PC Gaming Case</h1>
                     <div class="price-cart">
-                        <p class="price">65,380 Ft</p>
+                        <p class="price">54,590 Ft</p>
                         <a href="index.html"><i class="fa fa-shopping-cart"></i></a>
                     </div>
                 </div>
                 <div class="product product9">
-                    <img src="/img/products/motherboard/motherboard9.png" alt="Motherboard9">
-                    <h1>ASRock B450M-HDV2</h1>
+                    <img src="/img/products/case/case9.png" alt="Case9">
+                    <h1>AMANSON ATX PC Case,Mid-Tower USB 3.0 Gaming 270° Full View Tempered Glass Mid Tower</h1>
                     <div class="price-cart">
-                        <p class="price">27,670 Ft</p>
+                        <p class="price">33,240 Ft</p>
                         <a href="index.html"><i class="fa fa-shopping-cart"></i></a>
                     </div>
                 </div>

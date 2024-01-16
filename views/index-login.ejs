@@ -16,22 +16,24 @@
 <body>
     <header>
         <nav class="navbar">
-            <div class="logoDiv"><a href="/"><img src="/img/logo.png" alt="Logo" title="Logo" class="logo"></a></div>
+            <div class="logoDiv"><a href="/index-login"><img src="/img/logo.png" alt="Logo" title="Logo" class="logo"></a></div>
             <div class="hamburger">
                 <span class="hamburger-item"></span>
                 <span class="hamburger-item"></span>
                 <span class="hamburger-item"></span>
             </div>
             <ul class="menu">
-                <li><a href="/">Főoldal</a></li>
-                <li><a href="/#strengths">Erősségek</a></li>
-                <li><a href="/#about-us">Bemutatkozás</a></li>
-                <li><a href="/#references">Referenciák</a></li>
-                <li><a href="/webshop">Webshop</a></li>
+                <li><a href="/index-login"><%= name %></a></li>
+                <li><a href="/index-login#strengths">Erősségek</a></li>
+                <li><a href="/index-login#about-us">Bemutatkozás</a></li>
+                <li><a href="/index-login#references">Referenciák</a></li>
+                <li><a href="/webshop-login">Webshop</a></li>
             </ul>
             <ul class="login-button">
                 <li>
-                    <a href="/login"><i class="fa fa-sign-in" style="font-size:40px;color:white;margin:0;"></i></a>
+                    <form action="/logout?_method=DELETE" method="POST">
+                        <button type="submit" class="log-out"><i class="fa fa-arrow-right-from-bracket" style="font-size:40px;color:white;margin:0;"></i></button>
+                    </form>
                 </li>
             </ul>
         </nav>

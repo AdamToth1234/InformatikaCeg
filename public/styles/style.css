@@ -101,16 +101,37 @@ a {
     color: white;
     font-weight: bold;
     font-size: 1.7rem;
+    display: flex;
+    flex-direction: row;
 }
 
 .login-button li {
     list-style: none;
+    padding: 0 30px;
+    font-size: 40px;
+    color: white;
+    margin: 0;
+}
+
+.login-button li i {
+    cursor: pointer;
     transition: 350ms ease-in-out;
 }
 
-.login-button li:hover {
-    cursor: pointer;
+.login-button li i:hover {
     transform: translateY(-5px);
+}
+
+.log-out {
+    background-color: hsl(248, 52%, 8%);
+    border: 0;
+    cursor: pointer;
+    transition: 500ms ease-in-out;
+}
+
+.log-out:hover {
+    transform: translateY(-5px);
+
 }
 
 main, .main-site {
@@ -296,7 +317,7 @@ footer ul li {
 }
 
 
-@media (max-width: 1320px) {
+@media (max-width: 1490px) {
     .menu {
         display: none;
     }
@@ -333,7 +354,7 @@ footer ul li {
         width: 100%;
     }
 
-    .navbar .logoDiv {
+    .navbar .logoDiv{
         padding-left: 30px;
     }
 
@@ -343,7 +364,6 @@ footer ul li {
         font-size: 1.2rem;
         position: absolute;
         left: 20px;
-        top: 31px;
     }
 }
 
