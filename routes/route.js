@@ -1,5 +1,6 @@
 const express = require("express")
 const router = express.Router()
+const userCartGet = require("../models/cart_config_get")
 
 
 router.get("/", checkNotAuthenticated, (req, res) => {
@@ -13,10 +14,6 @@ router.get("/register", checkNotAuthenticated, (req, res) => {
 router.get("/login", checkNotAuthenticated, (req, res) => {
     res.render("login")
 })
-
-// router.get("/cart", checkNotAuthenticated, (req, res) => {
-//     res.render("cart")
-// })
 
 router.get("/webshop", checkNotAuthenticated, (req, res) => {
     res.render("webshop")
@@ -60,9 +57,13 @@ router.get("/index-login", checkAuthenticated, (req, res) => {
     res.render("index-login", { name: req.user.name})
 })
 
-// router.get("/cart-login", checkAuthenticated, (req, res) => {
-//     res.render("cart-login")
-// })
+router.get("/cart-login-get", checkAuthenticated, async (req, res) => {
+    res.status(200).json({ message: await userCartGet(req.user.email) })
+})
+
+router.get("/cart-login", checkAuthenticated, async (req, res) => {
+    res.render("cart-login", { name: req.user.name })
+})
 
 router.get("/webshop-login", checkAuthenticated, (req, res) => {
     res.render("webshop-login")

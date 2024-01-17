@@ -6,11 +6,10 @@ const passport = require("passport")
 const flash = require("express-flash")
 const session = require("express-session")
 const methodOverride = require("method-override")
-const mongoose = require("mongoose")
 const routes = require("./routes/route")
-const collectionCart = require("./models/cart_config")
-const collectionCartGet = require("./models/cart_config_get")
-const collectionUser = require("./models/config")
+const collectionCart = require("./models/cart_config_post")
+const collectionCartRemove = require("./models/cart_config_remove")
+const collectionUser = require("./models/user_config")
 
 
 const app = express()
@@ -19,7 +18,6 @@ app.set("view engine", "ejs")
 
 
 const initializePassport = require("./passport-config")
-const userCartGet = require("./models/cart_config_get")
 initializePassport(passport,
     email => User.findOne({ email: email }),
     id => User.findById(id)
@@ -71,13 +69,12 @@ app.post("/register", checkNotAuthenticated, async (req, res) => {
     }
 })
 
-app.post("/cart", checkAuthenticated, async (req, res) => {
-    collectionCart(req.user.email, req.body.name, req.body.kaka, 2, 1)
+app.post("/cart-login-new", checkAuthenticated, async (req, res) => {
+    collectionCart(req.user.email, req.body.id, req.body.name, req.body.price, req.body.img_url)
 })
 
-app.get("/cart", checkAuthenticated, async (req, res) => {
-    res.status(200).json({message: await userCartGet(req.user.email)})
-
+app.post("/cart-login-remove", checkAuthenticated, async (req, res) => {
+    collectionCartRemove(req.user.email, req.body.id)
 })
 
 app.delete("/logout", checkAuthenticated, (req, res) => {

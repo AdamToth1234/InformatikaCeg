@@ -106,7 +106,7 @@ a {
 
 .login-button li {
     list-style: none;
-    padding: 0 30px;
+    padding: 0 10px;
     font-size: 40px;
     color: white;
     margin: 0;
@@ -119,6 +119,11 @@ a {
 
 .login-button li i:hover {
     transform: translateY(-5px);
+}
+
+.shopping-cart {
+    background: transparent;
+    border: none;
 }
 
 .log-out {
@@ -435,9 +440,20 @@ footer ul li {
     }
 }
 
+@media (max-width: 570px) {
+    .login-button li {
+        padding: 0 5px;
+    }
+}
+
 @media (max-width: 470px) {
     .header {
         font-size: 2rem;
+    }
+
+    .login-button {
+        flex-direction: column;
+        top: 10px;
     }
 
     .reference-text h3 {
