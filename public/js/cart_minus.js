@@ -1,13 +1,13 @@
-setTimeout(cartRemoveProduct, 500)
+setTimeout(cartMinus, 500)
 
 
-function cartRemoveProduct() {
-    const removeButton = document.querySelectorAll(".remove")
-    removeButton.forEach(removeB => {
-        removeB.addEventListener("click", () => {
-            let id = Number(removeB.parentElement.parentElement.classList[1].split("-")[1])
+function cartMinus() {
+    const minusButton = document.querySelectorAll(".minus")
+    minusButton.forEach(minusB => {
+        minusB.addEventListener("click", () => {
+            let id = Number(minusB.parentElement.parentElement.parentElement.classList[1].split("-")[1])
 
-            fetch("/cart-login-remove", {
+            fetch("/cart-login-minus", {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json"

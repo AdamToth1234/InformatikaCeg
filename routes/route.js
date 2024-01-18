@@ -66,39 +66,39 @@ router.get("/cart-login", checkAuthenticated, async (req, res) => {
 })
 
 router.get("/webshop-login", checkAuthenticated, (req, res) => {
-    res.render("webshop-login")
+    res.render("webshop-login", { name: req.user.name })
 })
 
 router.get("/motherboard-login", checkAuthenticated, (req, res) => {
-    res.render("motherboard-login")
+    res.render("motherboard-login", { name: req.user.name })
 })
 
 router.get("/cpu-login", checkAuthenticated, (req, res) => {
-    res.render("cpu-login")
+    res.render("cpu-login", { name: req.user.name })
 })
 
 router.get("/gpu-login", checkAuthenticated, (req, res) => {
-    res.render("gpu-login")
+    res.render("gpu-login", { name: req.user.name })
 })
 
 router.get("/ram-login", checkAuthenticated, (req, res) => {
-    res.render("ram-login")
+    res.render("ram-login", { name: req.user.name })
 })
 
 router.get("/ssd-login", checkAuthenticated, (req, res) => {
-    res.render("ssd-login")
+    res.render("ssd-login", { name: req.user.name })
 })
 
 router.get("/hdd-login", checkAuthenticated, (req, res) => {
-    res.render("hdd-login")
+    res.render("hdd-login", { name: req.user.name })
 })
 
 router.get("/power-login", checkAuthenticated, (req, res) => {
-    res.render("power-login")
+    res.render("power-login", { name: req.user.name })
 })
 
 router.get("/case-login", checkAuthenticated, (req, res) => {
-    res.render("case-login")
+    res.render("case-login", { name: req.user.name })
 })
 
 

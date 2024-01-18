@@ -14,6 +14,7 @@ window.onload = function() {
         if (data.message == 0) {
             const p = document.querySelector(".cart-status")
             p.style.display = "flex"
+            main.classList.add("main-cart-zero")
         } else {
             for(let i of data.message) {
                 let divProduct = document.createElement("div")
@@ -56,7 +57,11 @@ window.onload = function() {
                 iPlus.classList.add("fa", "fa-plus")
                 iPlus.style.color = "white"
                 iPlus.style.margin = "0"
-    
+
+                let buttonDeleteProduct = document.createElement("button")
+                buttonDeleteProduct.classList.add("remove")
+                buttonDeleteProduct.innerHTML = "Törlés"
+
     
                 divProduct.appendChild(img)
                 divProduct.appendChild(spanName)
@@ -64,6 +69,7 @@ window.onload = function() {
     
                 divPlusMinusDiv.appendChild(spanPrice)
                 divPlusMinusDiv.appendChild(divPlusMinus)
+                divPlusMinusDiv.appendChild(buttonDeleteProduct)
     
                 divPlusMinus.appendChild(buttonMinus)
                 buttonMinus.appendChild(iMinus)
@@ -75,6 +81,7 @@ window.onload = function() {
     
     
                 main.appendChild(divProduct)
+                main.classList.add("main-cart-plus")
     
     
                 let priceString = i.price.split(" ")[0].split(",")

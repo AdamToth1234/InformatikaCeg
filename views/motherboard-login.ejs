@@ -25,7 +25,7 @@
                 <span class="hamburger-item"></span>
             </div>
             <ul class="menu">
-                <li><a href="/index-login">Főoldal</a></li>
+                <li><a href="/index-login"><%= name %></a></li>
                 <li><a href="/index-login#strengths">Erősségek</a></li>
                 <li><a href="/index-login#about-us">Bemutatkozás</a></li>
                 <li><a href="/index-login#references">Referenciák</a></li>
@@ -33,8 +33,11 @@
             </ul>
             <ul class="login-button">
                 <li>
+                    <a href="/cart-login"><i class="fa-solid fa-basket-shopping" style="font-size:35px;color:white;margin:0;"></i></a>
+                </li>
+                <li>
                     <form action="/logout?_method=DELETE" method="POST">
-                        <button type="submit" class="log-out"><i class="fa fa-arrow-right-from-bracket" style="font-size:40px;color:white;margin:0;"></i></button>
+                        <button type="submit" class="log-out"><i class="fa fa-arrow-right-from-bracket" style="font-size:35px;color:white;margin:0;"></i></button>
                     </form>
                 </li>
             </ul>

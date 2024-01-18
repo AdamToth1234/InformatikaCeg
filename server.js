@@ -8,6 +8,8 @@ const session = require("express-session")
 const methodOverride = require("method-override")
 const routes = require("./routes/route")
 const collectionCart = require("./models/cart_config_post")
+const collectionCartMinus = require("./models/cart_config_minus")
+const collectionCartPlus = require("./models/cart_config_plus")
 const collectionCartRemove = require("./models/cart_config_remove")
 const collectionUser = require("./models/user_config")
 
@@ -71,6 +73,14 @@ app.post("/register", checkNotAuthenticated, async (req, res) => {
 
 app.post("/cart-login-new", checkAuthenticated, async (req, res) => {
     collectionCart(req.user.email, req.body.id, req.body.name, req.body.price, req.body.img_url)
+})
+
+app.post("/cart-login-minus", checkAuthenticated, async (req, res) => {
+    collectionCartMinus(req.user.email, req.body.id)
+})
+
+app.post("/cart-login-plus", checkAuthenticated, async (req, res) => {
+    collectionCartPlus(req.user.email, req.body.id)
 })
 
 app.post("/cart-login-remove", checkAuthenticated, async (req, res) => {

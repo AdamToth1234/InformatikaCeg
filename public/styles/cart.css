@@ -10,8 +10,14 @@
     display: none;
 }
 
-main {
+.main-cart-plus {
     min-height: 100vh;
+    color: white;
+    font-family: 'Space Grotesk';
+}
+
+.main-cart-zero {
+    min-height: 70vh;
     color: white;
     font-family: 'Space Grotesk';
 }
@@ -44,16 +50,21 @@ main {
 .plus-minus-div {
     display: flex;
     flex-direction: column;
+    justify-content: space-around;
+    height: 100px;
 }
 
-.price {
-    width: 100%;
+.plus-minus-div:nth-child(1) {
+    margin: 20px;
 }
+
+/* .price {
+    width: 100%;
+} */
 
 .plus-minus {
     display: flex;
     justify-content: flex-end;
-    width: 100%;
 }
 
 .minus, .plus {
@@ -71,6 +82,14 @@ input {
     border: 1px solid gray;
     text-align: center;
     cursor: pointer;
+}
+
+.remove {
+    background: transparent;
+    color: rgb(220, 80, 80);
+    font-family: 'Space Grotesk';
+    cursor: pointer;
+    border: none;
 }
 
 .final {
@@ -129,8 +148,8 @@ input {
     }
 
     .plus-minus-div {
-        flex-direction: row;
-        width: 60%;
+        align-items: flex-end;
+        width: 100%;
     }
 
     .final {
