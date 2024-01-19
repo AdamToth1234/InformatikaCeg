@@ -7,20 +7,17 @@
     <title>PCY - Your number one place</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/cart.css">
+    <link rel="stylesheet" href="/styles/final.css">
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <script src="/js/script.js" defer></script>
-    <script src="/js/cart_get.js" defer></script>
-    <script src="/js/cart_minus.js" defer></script>
-    <script src="/js/cart_plus.js" defer></script>
-    <script src="/js/cart_remove.js" defer></script>
+    <script src="/js/final.js" defer></script>
     <script src="https://kit.fontawesome.com/f5d27edf17.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
         <nav class="navbar">
-            <div class="logoDiv"><a href="/index-login"><img src="/img/logo.png" alt="Logo" title="Logo" class="logo"></a></div>
+            <div class="logoDiv"><a href="/"><img src="/img/logo.png" alt="Logo" title="Logo" class="logo"></a></div>
             <div class="hamburger">
                 <span class="hamburger-item"></span>
                 <span class="hamburger-item"></span>
@@ -28,10 +25,10 @@
             </div>
             <ul class="menu">
                 <li><a href="/index-login"><%= name %></a></li>
-                <li><a href="/index-login#strengths">Erősségek</a></li>
-                <li><a href="/index-login#about-us">Bemutatkozás</a></li>
-                <li><a href="/index-login#references">Referenciák</a></li>
-                <li><a href="/webshop-login">Webshop</a></li>
+                <li><a href="/#strengths">Erősségek</a></li>
+                <li><a href="/#about-us">Bemutatkozás</a></li>
+                <li><a href="/#references">Referenciák</a></li>
+                <li><a href="/webshop">Webshop<a></li>
             </ul>
             <ul class="login-button">
                 <li>
@@ -45,8 +42,20 @@
             </ul>
         </nav>
     </header>
-    <main>
-        <p class="cart-status">A kosarad üres...</p>
+    <main class="main-final">
+        <form action="/final" method="GET" class="final-form">
+            <div class="label">
+                <i class="fa fa-money-bills"></i>
+                <span class="name">Számlázási adatok</span>
+            </div>
+            <input type="text" name="name" id="name" placeholder="Név" class="kivetel">
+            <ul class="inputs">
+                <li><input type="text" name="name" id="ISZ" placeholder="Irányítószám"></li>
+                <li><input type="text" name="city" id="city" placeholder="Város"></li>
+                <li><input type="text" name="address" id="address" placeholder="Cím"></li>
+            </ul>
+        </form>
+        <button class="final-button">Véglegesítés</button>
     </main>
     <footer>
         <ul class="main-footer">

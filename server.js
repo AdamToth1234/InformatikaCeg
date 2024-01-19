@@ -87,6 +87,11 @@ app.post("/cart-login-remove", checkAuthenticated, async (req, res) => {
     collectionCartRemove(req.user.email, req.body.id)
 })
 
+app.post("/final-post", checkAuthenticated, async (req, res) => {
+    collectionCartGetFinal(req.user.email, req.body.id, req.body.name, req.body.price, req.body.img_url)
+    console.log("Siker");
+})
+
 app.delete("/logout", checkAuthenticated, (req, res) => {
     req.logout((err) => {
         if (err) {

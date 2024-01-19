@@ -49,6 +49,7 @@ window.onload = function() {
                 input.name = "db"
                 input.id = "db"
                 input.value = i.db
+                input.classList.add("input-plus-minus")
     
                 let buttonPlus = document.createElement("button")
                 buttonPlus.classList.add("plus")
@@ -85,7 +86,7 @@ window.onload = function() {
     
     
                 let priceString = i.price.split(" ")[0].split(",")
-                let price = Number(priceString[0] + priceString[1]) * Number(i.db).toLocaleString("hu-HU")
+                let price = Number(priceString[0] + priceString[1]) * Number(i.db).toLocaleString()
                 prices.push(price)
             }
 
@@ -95,14 +96,15 @@ window.onload = function() {
             let ul = document.createElement("ul")
 
             let li1 = document.createElement("li")
-
             let spanFinalPrice = document.createElement("span")
             spanFinalPrice.classList.add("final-price")
 
             let li2 = document.createElement("li")
             let buttonFinal = document.createElement("button")
+            let a = document.createElement("a")
             buttonFinal.classList.add("final-button")
             buttonFinal.innerHTML = "Tovább az adatok megadásához"
+            a.href = "/final-login"
 
 
             divFinal.appendChild(ul)
@@ -111,7 +113,8 @@ window.onload = function() {
             li1.appendChild(spanFinalPrice)
 
             ul.appendChild(li2)
-            li2.appendChild(buttonFinal)
+            a.appendChild(buttonFinal)
+            li2.appendChild(a)
             
 
             main.appendChild(divFinal)

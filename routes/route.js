@@ -65,6 +65,10 @@ router.get("/cart-login", checkAuthenticated, async (req, res) => {
     res.render("cart-login", { name: req.user.name })
 })
 
+router.get("/final-login", checkAuthenticated, (req, res) => {
+    res.render("final-login", { name: req.user.name })
+})
+
 router.get("/webshop-login", checkAuthenticated, (req, res) => {
     res.render("webshop-login", { name: req.user.name })
 })

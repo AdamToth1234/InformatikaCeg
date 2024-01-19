@@ -58,10 +58,6 @@
     margin: 20px;
 }
 
-/* .price {
-    width: 100%;
-} */
-
 .plus-minus {
     display: flex;
     justify-content: flex-end;
@@ -74,7 +70,7 @@
     cursor: pointer;
 }
 
-input {
+.input-plus-minus {
     height: 26px;
     width: 20px;
     background: transparent;
