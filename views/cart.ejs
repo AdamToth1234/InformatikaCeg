@@ -7,50 +7,40 @@
     <title>PCY - Your number one place</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/styles/style.css">
-    <link rel="stylesheet" href="/styles/login-register.css">
+    <link rel="stylesheet" href="/styles/cart.css">
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
-    <script src="/js/script.js" defer></script>
+    <script src="/js/script.js" crossorigin="anonymous" defer></script>
     <script src="https://kit.fontawesome.com/f5d27edf17.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <header>
         <nav class="navbar">
-            <div class="logoDiv"><a href="/"><img src="/img/logo.png" alt="Logo" title="Logo" class="logo"></a></div>
+            <div class="logoDiv"><a href="/index-login"><img src="/img/logo.png" alt="Logo" title="Logo" class="logo"></a></div>
             <div class="hamburger">
                 <span class="hamburger-item"></span>
                 <span class="hamburger-item"></span>
                 <span class="hamburger-item"></span>
             </div>
             <ul class="menu">
-                <li><a href="/">Főoldal</a></li>
-                <li><a href="/#strengths">Erősségek</a></li>
-                <li><a href="/#about-us">Bemutatkozás</a></li>
-                <li><a href="/#references">Referenciák</a></li>
-                <li><a href="/webshop">Webshop</a></li>
+                <li><a href="/index-login">Főoldal</a></li>
+                <li><a href="/index-login#strengths">Erősségek</a></li>
+                <li><a href="/index-login#about-us">Bemutatkozás</a></li>
+                <li><a href="/index-login#references">Referenciák</a></li>
+                <li><a href="/webshop-login">Webshop</a></li>
             </ul>
             <ul class="login-button">
                 <li>
                     <a href="/cart"><i class="fa-solid fa-basket-shopping" style="font-size:35px;color:white;margin:0;"></i></a>
                 </li>
                 <li>
-                    <a href="/login"><i class="fa fa-sign-in" style="font-size:40px;color:white;"></i></a>
+                    <a href="/login"><i class="fa fa-sign-in" style="font-size:40px;color:white;margin: 0;"></i></a>
                 </li>
             </ul>
         </nav>
     </header>
-    <main class="main-login">
-        <div class="main-login-div">
-            <img src="/img/logo.png" alt="Logo" title="Logo">
-            <div class="motto">Az első hely gépalkatrészek vásárlására</div>
-        </div>
-        <form action="/register" method="POST" class="login">
-            <input type="text" name="name" id="name" class="name" placeholder="Teljes név">
-            <input type="email" name="email" id="email" class="email" placeholder="Email">
-            <input type="password" name="password" id="password" class="password" placeholder="Jelszó">
-            <span class="span"><a href="/login" class="span">Már van fiókod?</a></span>
-            <button type="submit" class="register-button">Regisztráció</button>
-        </form> 
+    <main>
+        <p class="cart-status">A kosarad megtekintéséhez jelentkezz be!</p>
     </main>
     <footer>
         <ul class="main-footer">

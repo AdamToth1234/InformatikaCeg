@@ -15,6 +15,10 @@ router.get("/login", checkNotAuthenticated, (req, res) => {
     res.render("login")
 })
 
+router.get("/cart", checkNotAuthenticated, (req, res) => {
+    res.render("cart")
+})
+
 router.get("/webshop", checkNotAuthenticated, (req, res) => {
     res.render("webshop")
 })
