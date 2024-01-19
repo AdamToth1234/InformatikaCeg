@@ -1,0 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+
+.cart-status {
+    align-items: center;
+    justify-content: center;
+    color: rgb(255, 255, 255);
+    font-family: 'Space Grotesk';
+    font-size: 1.5rem;
+    display: flex;
+    width: 90%;
+    height: 40vh;
+    text-align: center;
+}

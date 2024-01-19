@@ -107,10 +107,6 @@ img {
     margin-bottom: auto;
 }
 
-/* .nav-item:last-child {
-    margin-top: auto;
-} */
-
 .nav-item .link-item:hover {
     text-decoration: underline;
 }
