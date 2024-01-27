@@ -7,6 +7,7 @@
     <title>PCY - Your number one place</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="/styles/style.css">
+    <link rel="stylesheet" href="/styles/cart.css">
     <link rel="stylesheet" href="/styles/final.css">
     <link rel="icon" href="/img/favicon.ico" type="image/x-icon">
     <script src="/js/script.js" defer></script>
@@ -28,7 +29,7 @@
                 <li><a href="/#strengths">Erősségek</a></li>
                 <li><a href="/#about-us">Bemutatkozás</a></li>
                 <li><a href="/#references">Referenciák</a></li>
-                <li><a href="/webshop">Webshop<a></li>
+                <li><a href="/webshop-login">Webshop<a></li>
             </ul>
             <ul class="login-button">
                 <li>
@@ -43,19 +44,22 @@
         </nav>
     </header>
     <main class="main-final">
-        <form action="/final" method="GET" class="final-form">
-            <div class="label">
-                <i class="fa fa-money-bills"></i>
-                <span class="name">Számlázási adatok</span>
-            </div>
-            <input type="text" name="name" id="name" placeholder="Név" class="kivetel">
-            <ul class="inputs">
-                <li><input type="text" name="name" id="ISZ" placeholder="Irányítószám"></li>
-                <li><input type="text" name="city" id="city" placeholder="Város"></li>
-                <li><input type="text" name="address" id="address" placeholder="Cím"></li>
-            </ul>
-        </form>
-        <button class="final-button">Véglegesítés</button>
+        <div class="final-form-div">
+            <form action="/final-login" method="GET" class="final-form">
+                <div class="label">
+                    <i class="fa fa-money-bills"></i>
+                    <span class="data">Számlázási adatok</span>
+                </div>
+                <input type="text" name="name" id="name" placeholder="Név" class="kivetel">
+                <ul class="inputs">
+                    <li><input type="number" name="name" id="ISZ" placeholder="Irányítószám"></li>
+                    <li><input type="text" name="city" id="city" placeholder="Város"></li>
+                    <li><input type="text" name="address" id="address" placeholder="Cím"></li>
+                </ul>
+                <button class="final-button">Véglegesítés</button>
+            </form>
+        </div>
+        <div class="products"></div>
     </main>
     <footer>
         <ul class="main-footer">

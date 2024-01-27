@@ -47,7 +47,6 @@ section:not(:last-child) {
     width: 75px;
     margin-bottom: 20px;
     height: 100%;
-    border-radius: 15px;
 }
 
 .webshop-nav:hover {
@@ -70,7 +69,6 @@ section:not(:last-child) {
     font-size: 1.7rem;
     transition: ease-in-out 1.2s;
     list-style: none;
-    border-radius: 10px;
     width: 100%;
     height: 80vh;
     padding: 0;
@@ -151,6 +149,7 @@ section:not(:last-child) {
 
 .webshop-products [class^="product"] {
     display: flex;
+    flex-wrap: nowrap;
     justify-content: space-around;
     align-items: center;
     flex-direction: column;
@@ -164,23 +163,27 @@ section:not(:last-child) {
     opacity: 0;
 }
 
-.webshop-products [class^="product"] img {
-    width: 60%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-}
-
 .webshop-products [class^="product"]:hover {
     background-color: rgb(104, 100, 100);
 }
 
-.form-cart {
-    width: 100%;
+picture {
     display: flex;
     align-items: center;
-    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 15px;
+    padding: 20px;
+}
+
+.webshop-products [class^="product"] img {
+    width: 55%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+    object-fit: cover;
 }
 
 .price-cart {

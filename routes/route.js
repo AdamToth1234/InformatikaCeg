@@ -69,6 +69,10 @@ router.get("/cart-login", checkAuthenticated, async (req, res) => {
     res.render("cart-login", { name: req.user.name })
 })
 
+router.get("/final-login-get", checkAuthenticated, async (req, res) => {
+    res.status(200).json({ message: await userCartGet(req.user.email) })
+})
+
 router.get("/final-login", checkAuthenticated, (req, res) => {
     res.render("final-login", { name: req.user.name })
 })

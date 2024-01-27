@@ -6,7 +6,7 @@ cartButton.forEach(cartB => {
         let id = Number(cartB.parentElement.parentElement.classList[1].split("-")[1])
         let name = cartB.parentElement.parentElement.children[1].innerHTML
         let price = cartB.parentElement.children[0].innerHTML
-        let img_url = cartB.parentElement.parentElement.children[0].src
+        let img_url = cartB.parentElement.parentElement.children[0].children[1].src
 
         fetch("/cart-login-new", {
             method: "POST",

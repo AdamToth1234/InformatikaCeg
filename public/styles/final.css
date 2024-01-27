@@ -10,6 +10,13 @@
     width: 100%;
 }
 
+.final-form-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
 .final-form {
     display: flex;
     justify-content: center;
@@ -31,7 +38,7 @@
     width: 99.2%;
 }
 
-.name {
+.data {
     margin-left: 5px;
 }
 
@@ -79,17 +86,35 @@ input {
     background-color: rgb(114, 105, 93);
 }
 
+.products {
+    min-height: 60vh;
+    color: white;
+    font-family: 'Space Grotesk';
+}
+
+p {
+    font-size: 0.9rem;
+}
+
+.products ul {
+    display: flex;
+    justify-content: flex-end;
+    list-style: none;
+    margin-right: 20px;
+    width: 88%;
+}
+
 
 @media (max-width: 770px) {
     .main-final {
         align-items: center;
     }
-
+    
     .final-form {
         width: 90%;
         margin: 0;
     }
-
+    
     .products {
         width: 100%;
     }
