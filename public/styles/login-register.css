@@ -30,7 +30,7 @@
     margin: 100px 0;
     color: rgb(207, 207, 207);
     background-color: white;
-    box-shadow: 5px -5px 30px white;
+    box-shadow: 0 0 10px white;
     width: auto;
     transition: ease-in-out 1.2s;
 }

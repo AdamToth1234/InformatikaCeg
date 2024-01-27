@@ -40,14 +40,6 @@ section:not(:last-child) {
     padding: 0;
 }
 
-img {
-    width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-}
-
 .webshop-nav {
     display: flex;
     background-color: rgb(55, 53, 53);
@@ -172,11 +164,17 @@ img {
     opacity: 0;
 }
 
+.webshop-products [class^="product"] img {
+    width: 60%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border-radius: 0;
+}
+
 .webshop-products [class^="product"]:hover {
     background-color: rgb(104, 100, 100);
 }
-
-
 
 .form-cart {
     width: 100%;
