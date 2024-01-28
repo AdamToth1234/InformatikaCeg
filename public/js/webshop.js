@@ -16,10 +16,10 @@ productsLoading.forEach((item, i) => {
 })
 
 
-
 const productsShuffle = document.querySelector(".webshop-products")
 const productsShuffleArray = [...productsShuffle.children]
 const content = document.querySelector(".content")
+
 
 let productsShuffleArrayFinal = []
 for (let i = 0; i < 9; i++) {
