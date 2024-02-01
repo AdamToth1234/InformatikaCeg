@@ -40,18 +40,19 @@ header {
 .navbar .logo {
     border-radius: 50%;
     cursor: pointer;
+    width: 100%;
+    height: auto;
 }
 
 a {
     text-decoration: none;
     color: white;
-    transition: 350ms ease-in-out;
     cursor: pointer;
+    transition: 200ms ease-in;
 }
 
 a:hover {
-    transform: translateY(-5px);
-
+    color: rgb(96, 91, 91);
 }
 
 .menu {
@@ -66,7 +67,6 @@ a:hover {
     font-weight: bold;
     font-size: 1.2rem;
     text-transform: uppercase;
-    transition: 350ms ease-in-out;
 }
 
 .menu li:not(:last-child) {
@@ -206,7 +206,7 @@ img {
 
 iframe {
     aspect-ratio: 16 / 9;
-    width: 80%;
+    width: 65%;
     border: 2px solid white;
     border-radius: 10px;
 }
@@ -307,7 +307,7 @@ iframe {
 }
 
 .rating-number {
-    font-size: 30px;
+    font-size: 25px;
     font-family: 'Rethink Sans';
 }
 
