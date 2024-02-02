@@ -195,6 +195,11 @@ img {
 
 }
 
+.strengths-text img {
+    height: 400px;
+    width: 25%;
+}
+
 .strengths-text ul {
     list-style: url(../img/kaka.png);
 }
@@ -239,11 +244,16 @@ iframe {
     justify-content: space-between;
 }
 
+.person1 img, .person2 img {
+    width: 30%;
+    height: 350px;  
+}
+
 .person1 p, .person2 p {
     margin: 3rem;
     text-align: justify;
     font-family: 'Quicksand';
-    font-size: 1.6rem;
+    font-size: 1.3rem;
     background-color: rgb(220, 216, 216);
     padding: 15px;
     border-radius: 50px 10px;
