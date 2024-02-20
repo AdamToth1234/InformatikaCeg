@@ -12,7 +12,7 @@ body {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
-    animation: fadeIn 0.5s ease-out; /* Animáció hozzáadása */
+    animation: fadeIn 0.5s ease-out;
     z-index: 10;
 }
 
@@ -25,8 +25,8 @@ body {
     padding: 20px;
     border-radius: 8px;
     text-align: center;
-    animation: slideIn 0.5s ease-out; /* Animáció hozzáadása */
-    width: 50%;
+    animation: slideIn 0.5s ease-out;
+    width: 30%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -40,7 +40,7 @@ body {
     cursor: pointer;
 }
 
-/* Animációk definiálása */
+
 @keyframes fadeIn {
     from {
         opacity: 0;

@@ -8,5 +8,5 @@ let flash = document.querySelector(".container div");
 btn.onclick = function () {
   container.style.transform = "rotate(" + number + "deg)";
   number += Math.ceil(Math.random() * 10000);
-
+  fetch("/spin")
 }

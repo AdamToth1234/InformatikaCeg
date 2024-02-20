@@ -8,10 +8,11 @@
 	box-shadow: 0 0 10px gray;
 	transition: 3s all;
 }
+
 .container div{
 	height: 50%;
 	width: 200px;
-	clip-path: polygon(100% 0,50% 100%, 0 0);
+	clip-path: polygon(100% 0, 50% 100%, 0 0);
 	transform: translateX(-50%);
 	transform-origin: bottom;
 	position: absolute;
@@ -23,32 +24,39 @@
 	font-family: monospace;
 	font-weight: 1000;
 	color:#008276; 
-	 writing-mode: vertical-rl;
+	writing-mode: vertical-rl;
 }
+
 .container .one{
 	background: #baf4ee;
 	left: 50%;
 }
+
 .container .two{
 	background: #4ed4c6;
 	transform: rotate(60deg);
 }
+
 .container .three{
 	background: #baf4ee;
 	transform: rotate(120deg);
 }
+
 .container .four{
 	background: #4ed4c6;
 	transform: rotate(180deg);
 }
+
 .container .five{
 	background: #baf4ee;
 	transform: rotate(240deg);
 }
+
 .container .six{
 	background: #4ed4c6;
 	transform: rotate(300deg);
 }
+
 .mid{
 	height: 25px;
 	width: 25px;
@@ -56,6 +64,7 @@
 	position: absolute;
 	background: #008276;
 }
+
 #spin{
 	height: 60px;
 	width: 200px;
@@ -71,9 +80,11 @@
 	box-shadow: 0 5px 10px gray;
 	transition: 0.2s all;
 }
+
 #spin:hover{
 	box-shadow: none;
 }
+
 .stoper{
 	height: 50px;
 	width: 40px;

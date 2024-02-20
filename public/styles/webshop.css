@@ -167,10 +167,6 @@ section:not(:last-child) {
     opacity: 0;
 }
 
-.webshop-products [class^="product"]:hover {
-    background-color: rgb(104, 100, 100);
-}
-
 picture {
     display: flex;
     align-items: center;
