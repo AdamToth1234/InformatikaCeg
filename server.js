@@ -12,6 +12,9 @@ const collectionCartMinus = require("./models/cart_config_minus")
 const collectionCartPlus = require("./models/cart_config_plus")
 const collectionCartRemove = require("./models/cart_config_remove")
 const collectionUser = require("./models/user_config")
+const spin = require("./models/spin_config_post")
+const coupon = require("./models/coupon_config_post")
+
 
 
 const app = express()
@@ -71,24 +74,29 @@ app.post("/register", checkNotAuthenticated, async (req, res) => {
     }
 })
 
-app.post("/cart-login-new", checkAuthenticated, async (req, res) => {
+app.post("/cart-login-new", checkAuthenticated, (req, res) => {
     collectionCart(req.user.email, req.body.id, req.body.name, req.body.price, req.body.img_url)
 })
 
-app.post("/cart-login-minus", checkAuthenticated, async (req, res) => {
+app.post("/cart-login-minus", checkAuthenticated, (req, res) => {
     collectionCartMinus(req.user.email, req.body.id)
 })
 
-app.post("/cart-login-plus", checkAuthenticated, async (req, res) => {
+app.post("/cart-login-plus", checkAuthenticated, (req, res) => {
     collectionCartPlus(req.user.email, req.body.id)
 })
 
-app.post("/cart-login-remove", checkAuthenticated, async (req, res) => {
+app.post("/cart-login-remove", checkAuthenticated, (req, res) => {
     collectionCartRemove(req.user.email, req.body.id)
 })
 
-app.post("/final-post", checkAuthenticated, async (req, res) => {
+app.post("/final-post", checkAuthenticated, (req, res) => {
     collectionCartGetFinal(req.user.email, req.body.id, req.body.name, req.body.price, req.body.img_url)
+})
+
+app.post("/spin", checkAuthenticated, (req, res) => {
+    spin(req.user.email)
+    coupon(req.user.email, req.body.coupon, req.body.percentage)
 })
 
 app.delete("/logout", checkAuthenticated, (req, res) => {

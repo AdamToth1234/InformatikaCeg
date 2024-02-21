@@ -1,6 +1,8 @@
 const express = require("express")
 const router = express.Router()
 const userCartGet = require("../models/cart_config_get")
+const spinGet = require("../models/spin_config_get")
+
 
 
 router.get("/", checkNotAuthenticated, (req, res) => {
@@ -59,6 +61,10 @@ router.get("/case", checkNotAuthenticated, (req, res) => {
 
 router.get("/index-login", checkAuthenticated, (req, res) => {
     res.render("index-login", { name: req.user.name})
+})
+
+router.get("/spin-login", checkAuthenticated, async (req, res) => {
+    res.status(200).json({ data: await spinGet(), user: req.user.email })
 })
 
 router.get("/cart-login-get", checkAuthenticated, async (req, res) => {

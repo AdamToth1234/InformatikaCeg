@@ -1,14 +1,24 @@
 document.addEventListener("DOMContentLoaded", function() {
-    // Ablak megjelenítése betöltéskor
-    showPopup();
-
-    // Dátum beállítása
-    // setDate();
-
-    // Ablak bezárása kattintásra
-    document.getElementById("close-btn").addEventListener("click", function() {
-        closePopup();
-    });
+    fetch("/spin-login", {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json"
+        }
+    })
+    .then(res => res.json())
+    .then(data => {
+        let respond = false
+        for (email of data["data"]) {
+            if (email["email"] == data["user"]) {
+                respond = true
+            }
+        }
+        if (respond) return
+        showPopup();
+        document.getElementById("close-btn").addEventListener("click", function() {
+            closePopup();
+        });
+    })
 });
 
 function showPopup() {
@@ -18,9 +28,3 @@ function showPopup() {
 function closePopup() {
     document.getElementById("popup-container").style.display = "none";
 }
-
-// function setDate() {
-//     var currentDate = new Date();
-//     var formattedDate = currentDate.toDateString();
-//     document.getElementById("date-display").innerText = "Mai dátum: " + formattedDate;
-// }
