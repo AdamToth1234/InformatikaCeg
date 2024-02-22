@@ -19,7 +19,7 @@ function Click() {
             const priceB = document.querySelectorAll("b")[2]
             const priceString = priceB.innerHTML.split(" ")[0].split(",")
             let price = Number(priceString[0] + priceString[1]) * Number((100 - data.message[0].percentage) / 100)
-            priceB.innerHTML = `${price.toLocaleString()} Ft`
+            priceB.innerHTML = `${price.toLocaleString("hu-HU")} Ft`
             buttonAdd.removeEventListener("click", Click)
             input.value = ""
             alert("Sikeresen hozzáadtad a kuponodat!")

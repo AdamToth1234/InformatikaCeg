@@ -97,7 +97,7 @@ window.onload = function() {
         li2.appendChild(spanFinalPrice)
         
 
-        const sum = prices.reduce((accumulator, currentValue) => accumulator + currentValue, 0).toLocaleString()
+        const sum = prices.reduce((accumulator, currentValue) => accumulator + currentValue, 0).toLocaleString("hu-HU")
         spanFinalPrice.innerHTML = `Össz érték: <b>${sum} Ft</b>`
 
         fetch("/coupon-get", {

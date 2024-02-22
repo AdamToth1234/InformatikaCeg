@@ -86,7 +86,7 @@ window.onload = function() {
     
     
                 let priceString = i.price.split(" ")[0].split(",")
-                let price = Number(priceString[0] + priceString[1]) * Number(i.db).toLocaleString()
+                let price = Number(priceString[0] + priceString[1]) * Number(i.db).toLocaleString("hu-HU")
                 prices.push(price)
             }
 
@@ -120,7 +120,7 @@ window.onload = function() {
             main.appendChild(divFinal)
 
 
-            const sum = prices.reduce((accumulator, currentValue) => accumulator + currentValue, 0).toLocaleString()
+            const sum = prices.reduce((accumulator, currentValue) => accumulator + currentValue, 0).toLocaleString("hu-HU")
             spanFinalPrice.innerHTML = `Össz érték: <b>${sum} Ft</b>`
         }
     })
