@@ -52,7 +52,7 @@ window.onload = function() {
 
 
             let priceString = i.price.split(" ")[0].split(",")
-            let price = Number(priceString[0] + priceString[1]) * Number(i.db).toLocaleString()
+            let price = Number(priceString[0] + priceString[1]) * Number(i.db).toLocaleString("hu-HU")
             prices.push(price)
         }
 
