@@ -17,7 +17,7 @@ function Click() {
     .then(data => {
         if (input.value == data.message[0].coupon) {
             const priceB = document.querySelectorAll("b")[2]
-            const priceString = priceB.innerHTML.split(" ")[0].split(",")
+            const priceString = priceB.innerHTML.split(" ")[0].split("&nbsp;")
             let price = Number(priceString[0] + priceString[1]) * Number((100 - data.message[0].percentage) / 100)
             priceB.innerHTML = `${price.toLocaleString("hu-HU")} Ft`
             buttonAdd.removeEventListener("click", Click)
