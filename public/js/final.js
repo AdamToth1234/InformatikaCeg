@@ -57,19 +57,60 @@ window.onload = function() {
         }
 
         let ul = document.createElement("ul")
-
+        
         let li1 = document.createElement("li")
+        li1.classList.add("coupon")
+
+        let divCouponGet = document.createElement("div")
+        divCouponGet.classList.add("coupon-get")
+
+        let inputCoupon = document.createElement("input")
+        inputCoupon.placeholder = "Kuponkódod"
+
+        let buttonCoupon = document.createElement("button")
+        buttonCoupon.classList.add("final-button")
+        buttonCoupon.innerHTML = "Hozzáad"
+
+        let divCouponString = document.createElement("div")
+        divCouponString.classList.add("coupon-string")
+
+        let pCoupon = document.createElement("p")
+
+        let pPercentage = document.createElement("p")
+
+
+
+        let li2 = document.createElement("li")
         let spanFinalPrice = document.createElement("span")
         spanFinalPrice.classList.add("final-price")
 
 
         products.appendChild(ul)
         ul.appendChild(li1)
-        li1.appendChild(spanFinalPrice)
-
+        li1.appendChild(divCouponGet)
+        divCouponGet.appendChild(inputCoupon)
+        divCouponGet.appendChild(buttonCoupon)
+        li1.appendChild(divCouponString)
+        divCouponString.appendChild(pCoupon)
+        divCouponString.appendChild(pPercentage)
+        ul.appendChild(li2)
+        li2.appendChild(spanFinalPrice)
+        
 
         const sum = prices.reduce((accumulator, currentValue) => accumulator + currentValue, 0).toLocaleString()
         spanFinalPrice.innerHTML = `Össz érték: <b>${sum} Ft</b>`
+
+        fetch("/coupon-get", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json"
+            }
+        })
+        .then(res => res.json())
+        .then(data => {
+            pCoupon.innerHTML = `Kuponod: <b>${data.message[0].coupon}</b>`
+            pPercentage.innerHTML = `Százalék: <b>-${data.message[0].percentage}%</b>`
+        })
     })
 }
 

@@ -49,6 +49,10 @@ function generateX() {
     return xs[Math.floor(Math.random() * xs.length)]
 }
 
+function closePopup() {
+  document.getElementById("popup-container").style.display = "none";
+}
+
 
 
 let isSpinning = false
@@ -89,6 +93,7 @@ function Spin(event) {
           }
         }
       }
+      coupon = generateCoupon()
 
       fetch("/spin", {
         method: "POST",
@@ -96,19 +101,19 @@ function Spin(event) {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          coupon: generateCoupon(),
+          coupon: coupon,
           percentage: closestData
         })
       }).then(res => {
         return res.json()
       })
 
-      console.log("Megállt adat:", closestData)
 
       container.style.transition = "none"
       container.style.transform = "rotate(0)"
       isSpinning = false
-
+      alert(`Gratulálok! Nyertél egy ${closestData}%-os kedvezményt! Kuponkódod: ${coupon}`)
+      closePopup()
     }, 3000)
   }
   btn.removeEventListener("click", Spin)

@@ -2,6 +2,7 @@ const express = require("express")
 const router = express.Router()
 const userCartGet = require("../models/cart_config_get")
 const spinGet = require("../models/spin_config_get")
+const couponGet = require("../models/coupon_config_get")
 
 
 
@@ -81,6 +82,10 @@ router.get("/final-login-get", checkAuthenticated, async (req, res) => {
 
 router.get("/final-login", checkAuthenticated, (req, res) => {
     res.render("final-login", { name: req.user.name })
+})
+
+router.get("/coupon-get", checkAuthenticated, async (req, res) => {
+    res.status(200).json({ message: await couponGet(req.user.email) })
 })
 
 router.get("/webshop-login", checkAuthenticated, (req, res) => {
